@@ -1,0 +1,6 @@
+# Python libraries for mfm2mqtt 
+#time
+pyserial
+#libxml
+#json
+paho-mqtt
