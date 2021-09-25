@@ -12,7 +12,7 @@ nominal=50
 SCRAPE_INTERVAL=0.1 # os.environ.get('SCRAPE_INTERVAL')
 
 MQTT_TOPIC="mfm" # os.environ.get('MQTT_TOPIC')
-MQTT_HOST="192.168.178.101" # os.environ.get('MQTT_TOPIC')
+MQTT_HOST="192.168.177.100" # os.environ.get('MQTT_TOPIC')
 MQTT_PORT=1883 # os.environ.get('MQTT_TOPIC')
 MQTT_CLIENT_ID="" # os.environ.get('MQTT_CLIENT_ID')
 MQTT_KEEPALIVE=60 # os.environ.get('MQTT_KEEPALIVE')
