@@ -65,7 +65,7 @@ def main():
         _ =config.get('mfm', 'SERIAL_PORT')
         _ =config.getint('mfm', 'interval')
         _ =config.get('mfm', 'location')
-        _ =config.get('mfm', 'zip-code')
+        _ =config.getint('mfm', 'zip_code')
         #_ = config.get('influxdb', 'measurement_name')
     except configparser.Error as e:
         logging.error("Config Error: %s", str(e))
@@ -81,7 +81,7 @@ def main():
     #result_dict={}
     request_interval = 60
     try:
-        request_interval = config.getint('kostal', 'interval', fallback=60)
+        request_interval = config.getint('mfm', 'interval', fallback=60)
         api_response, connection_ok=getdata(config)
  
     except configparser.Error as e:
@@ -93,7 +93,7 @@ def main():
 
     # test connection
     try:
-        api_response
+        connection_ok==True
     except Exception as e:
         #if "401" in str(e):
         #    logging.error("Failed to connect to device '%s' Check Board Connectivity!" %

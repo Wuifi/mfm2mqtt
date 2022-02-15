@@ -15,6 +15,8 @@ default_log_level = logging.INFO
 
 ###### application specific functions #####
 def getdata(config):
+    raw=None
+    connection_ok=False
     #config serial interface
     try:
         ser = serial.Serial(
@@ -33,7 +35,6 @@ def getdata(config):
         connection_ok=True
     except Exception as e:
         logging.error("check connection! Error while getting data from device: %s", str(e))
-        connection_ok=False
     return raw,connection_ok
     
 def convertraw2str(raw):
@@ -62,7 +63,6 @@ def freqmonitoring(config,act_scaled):
 
 ## convert data to json
 def string2dict(string):
-
     min=None
     max=None
     mean=None
@@ -82,7 +82,7 @@ def string2dict(string):
                                         "mean":mean},
                  "STATE":{"flag":state_flag,"debug":debug_str}}}
 
-    return json_string, dict_output 
+    return dict_output, state_flag 
 
 ## publish data 2 mqtt
 def convert_to_mqtt_msg(dict_input,config):
