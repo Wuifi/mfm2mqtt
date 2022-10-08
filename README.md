@@ -39,17 +39,17 @@ run the script in folder `python3 /debug/mfm_serial_test.py' for a first vaildat
 
 ### create docker container
 build the container from a terminal:
-`sudo docker build -t mfm2mqtt .`
+`sudo docker build -t mfm2mqtt:latest .`
 
-`sudo docker run mfm2mqtt`
+`sudo docker run mfm2mqtt --name mfm2mqtt mfm2mqtt/app`
 
 building the container with docker-compose
 `docker-compose up`
 
- * Run `python3 mfm2mqtt.py`
+ * Run `python3 app.py`
 
 
-## Description or the runtime sequence
+## Description of the runtime sequence
 - get data
 - convert to json
 - create mqtt message
