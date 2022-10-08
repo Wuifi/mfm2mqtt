@@ -119,7 +119,7 @@ def main():
         api_response, connection_ok=getdata(config)
         #if connection_ok==True:
         convertraw2str(api_response)
-        dict_output, state_flag=string2dict(api_response)
+        dict_output, state_flag=mfmstring2dict_P1(api_response)
         MQTT_msg=convert_to_mqtt_msg(dict_output,config)
         #else: 
         publish2mqtt(MQTT_msg,config)

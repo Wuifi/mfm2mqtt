@@ -12,7 +12,11 @@ ser = serial.Serial(
  bytesize=serial.EIGHTBITS,
  timeout=1
 )
-counter=0
-while 1:
- x=ser.readline()
- print(x)
+
+while True:
+ raw=ser.readline()
+ #print(raw)
+ string=str(raw, 'UTF-8')
+ string = string.replace('\r\n','') 
+ print(string)
+ 

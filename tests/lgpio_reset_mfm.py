@@ -4,6 +4,9 @@
 #from gpiozero import LED
 import lgpio
 from time import sleep
+from mfm_functions import *
+
+mfm_port = '/dev/ttyS0'
 ## settings for the HW-Interface to the LED-flashlight
 LED = 18
 #led = LED(18)
@@ -15,20 +18,8 @@ h = lgpio.gpiochip_open(0)
 lgpio.gpio_claim_output(h, LED)
 lgpio.gpio_claim_output(h, RESET)
 
-
-import serial
-ser = serial.Serial(
- port='/dev/ttyS0',
- baudrate = 19200,
- parity=serial.PARITY_NONE,
- stopbits=serial.STOPBITS_ONE,
- bytesize=serial.EIGHTBITS,
- timeout=1
-)
 try:
     print('mfm - reset script started')
-    x=ser.readline()
-    print(x)
     sleep(1)
     #led.on()
     #reset.on()
@@ -46,8 +37,15 @@ try:
     while True:
         #led.on()
         #print('LED on')
-        x=ser.readline()
-        print(x)
+
+        raw,connection_ok=getrawdata(mfm_port)
+        #print(raw)
+        string=str(raw, 'UTF-8')
+        string = string.replace('\r\n','') 
+
+        list = string.split(";")
+        valid=mfmOutputMonitor(list)
+        print('valid: ',valid,' - Data - ',list)
         #sleep(1)
         #led.off()
         #print('LED off')
