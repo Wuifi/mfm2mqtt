@@ -7,7 +7,8 @@ import logging
 import time
 import json
 
-from mfm_functions import *
+#from src.mfm_functions import *
+from src.mfm_functions import MFMgetrawdata ,MFMmonitor
 #import mfm_functions
 #from mfm_functions import MFMgetrawdata ,MFMmonitor
 #from src import mfm_functions

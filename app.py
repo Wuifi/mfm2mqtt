@@ -28,6 +28,7 @@ __license__ = "MIT"
 # default vars
 running = True
 default_config = os.path.join(os.path.dirname(__file__), 'config.ini')
+#default_config = os.path.join('./config.ini')
 default_log_level = logging.INFO
 
 
