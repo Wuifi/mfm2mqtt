@@ -4,7 +4,7 @@
 #from gpiozero import LED
 import lgpio
 from time import sleep
-from mfm_functions import *
+from src.mfm_functions import MFMgetrawdata ,MFMmonitor
 
 mfm_port = '/dev/ttyS0'
 ## settings for the HW-Interface to the LED-flashlight
@@ -38,13 +38,13 @@ try:
         #led.on()
         #print('LED on')
 
-        raw,connection_ok=getrawdata(mfm_port)
+        raw,connection_ok=MFMgetrawdata(mfm_port)
         #print(raw)
         string=str(raw, 'UTF-8')
         string = string.replace('\r\n','') 
 
         list = string.split(";")
-        valid=mfmOutputMonitor(list)
+        valid=MFMmonitor(list)
         print('valid: ',valid,' - Data - ',list)
         #sleep(1)
         #led.off()
