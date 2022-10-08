@@ -15,15 +15,13 @@ import time
 from datetime import datetime
 
 # import 3rd party modules
-#import requests
-#import influxdb
-#import functions from files
-from app_functions import *
-from mqtt_functions import *
-from basic_functions import *
+from src.app_functions import *
+from src.mfm_functions import *
+from src.mqtt_functions import *
+from src.basic_functions import *
 
-__version__ = "0.0.1"
-__version_date__ = "2022-02-14"
+__version__ = "0.0.2"
+__version_date__ = "2022-10-08"
 __description__ = "mfm2mqtt"
 __license__ = "MIT"
 
