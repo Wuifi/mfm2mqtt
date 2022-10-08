@@ -45,11 +45,11 @@ def convertraw2str(raw):
         string=""
     return string, raw2str_ok
 
-def mfmProtocolConverter(config,string):
-    #checks, what kind of information / protocol mfm is sending
-    protocol=config.getint('mfm', 'protocol')
-    print(string)
-    return
+# def mfmProtocolConverter(config,string):
+#     #checks, what kind of information / protocol mfm is sending
+#     protocol=config.getint('mfm', 'protocol')
+#     print(string)
+#     return
 
 
 
