@@ -2,7 +2,7 @@
 import logging
 import serial
 
-def getrawdata(mfm_port):
+def MFMgetrawdata(mfm_port):
     raw=None
     connection_ok=0
     #config serial interface
@@ -26,8 +26,10 @@ def getrawdata(mfm_port):
         connection_ok=0
         #logging.error("check connection! Error while getting data from device: %s", str(e))
     return raw,connection_ok
- 
-def mfmOutputMonitor(list):
+
+
+
+def MFMmonitor(list):
     #checks for any invalid data (e.g. during reset / auto detection)
     valid=0#'no measurement available'
      #['50028', '+0276', '0', '0', '0', '0', '0', '0', '0', '0\r\n']
@@ -38,8 +40,11 @@ def mfmOutputMonitor(list):
         valid=0    
     return valid    
 
-## convert data to json
-def mfmstring2dict_P4(list):
+
+
+
+def MFMstring2dict_P4(list):
+    ## convert data to json
     act_scaled = None
     p_raw = None
     freqMon = [None, None, None, None, None, None, None, None]
