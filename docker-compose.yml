@@ -17,5 +17,5 @@ services:
   #  - MQTT_AUTH=None
     devices:
     # mapping of host HW-serial Interface to docker container 
-    - "/dev/ttyAMA0:/dev/ttyAMA0"
-    #- "/dev/ttyS0:/dev/ttyAMA0"
+    #- "/dev/ttyAMA0:/dev/ttyAMA0"
+    - "/dev/ttyS0:/dev/ttyS0"
