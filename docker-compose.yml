@@ -2,7 +2,7 @@ version: '3.3'
 services:
   mfm:
     build: .
-    image: mfm2mqtt:latest
+    image: mfm2mqtt:dev
     container_name: mfm2mqtt
     restart: unless-stopped
     user: "0"

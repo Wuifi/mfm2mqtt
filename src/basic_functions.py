@@ -1,8 +1,11 @@
-#!/usr/bin/env python3
-self_description = """
-kostal2mqtt is a tiny daemon written to fetch data from the Kostal Inverter and
-sends it to an mqtt-broker instance.
-"""
+# -*- coding: utf-8 -*-
+#
+#  mfm2mqtt.py
+#
+#  This work is licensed under the terms of the MIT license.
+#  For a copy, see file LICENSE.txt included in this
+#  repository or visit: <https://opensource.org/licenses/MIT>.
+
 # import standard modules
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 import configparser
@@ -12,16 +15,12 @@ import os
 #import time
 from datetime import datetime
 
-__version__ = "0.0.1"
-__version_date__ = "2022-02-06"
-__description__ = "kostal2mqtt"
+__version__ = "0.0.2"
+__version_date__ = "2022-10-13"
+__description__ = "mfm2mqtt"
 __license__ = "MIT"
 
 
-
-# default vars
-running = True
-default_config = os.path.join(os.path.dirname(__file__), 'config.ini')
 default_log_level = logging.INFO
 
 def parse_args():
